@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moja lista zadań - aplikacja</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+    <!-- LINK DO CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- NAGŁÓWEK -->
+      <div class="app-header">
+        <h1>✅ Moja lista zadań</h1>
+        <p>Organizuj swoją pracę efektywnie</p>
+      </div>
+
+      <!-- KARTA APLIKACJI -->
+      <div class="todo-card">
+        <!-- SEKCJA DODAWANIA -->
+        <div class="add-section">
+          <div class="input-group">
+            <input
+              type="text"
+              id="taskInput"
+              placeholder="Co masz do zrobienia?"
+              maxlength="100"
+            />
+            <div class="field-group">
+              <label for="prioritySelect">Priorytet</label>
+              <select id="prioritySelect" aria-label="Priorytet zadania">
+                <option value="low">Niski</option>
+                <option value="medium" selected>Średni</option>
+                <option value="high">Wysoki</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="categorySelect">Kategoria</label>
+              <select id="categorySelect" aria-label="Kategoria zadania">
+                <option value="work" selected>Praca</option>
+                <option value="home">Dom</option>
+                <option value="shopping">Zakupy</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="dueDateInput">Termin</label>
+              <input
+                type="date"
+                id="dueDateInput"
+                aria-label="Termin wykonania"
+              />
+            </div>
+            <button id="addBtn">Dodaj</button>
+          </div>
+        </div>
+
+        <!-- FILTRY -->
+        <div class="filters">
+          <div class="task-counter"><span id="taskCount">0</span> zadań</div>
+          <div class="sort-group">
+            <label for="sortSelect">Sortuj:</label>
+            <select id="sortSelect">
+              <option value="date-desc">Data dodania</option>
+              <option value="alpha-asc">Alfabetycznie</option>
+            </select>
+          </div>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">
+              Wszystkie
+            </button>
+            <button class="filter-btn" data-filter="active">Aktywne</button>
+            <button class="filter-btn" data-filter="completed">
+              Ukończone
+            </button>
+          </div>
+        </div>
+
+        <!-- LISTA ZADAŃ -->
+        <div class="tasks-list" id="tasksList">
+          <div class="empty-state">
+            <div style="font-size: 64px">📝</div>
+            <h3>Brak zadań</h3>
+            <p>Dodaj swoje pierwsze zadanie!</p>
+          </div>
+        </div>
+
+        <!-- STOPKA -->
+        <div class="app-footer">
+          <button class="clear-all-btn" id="clearCompleted">
+            Usuń ukończone
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LINK DO JAVASCRIPT - NA KOŃCU! -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
