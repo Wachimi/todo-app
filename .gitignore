@@ -1,0 +1,11 @@
+# Pliki systemowe
+.DS_Store
+Thumbs.db
+
+# Pliki edytora
+.vscode/
+.idea/
+
+# Notatki osobiste
+notes.txt
+TODO.txt
